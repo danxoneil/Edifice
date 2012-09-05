@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra-initializers'
 
 module Edifice
     class Application < Sinatra::Base
