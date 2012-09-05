@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Edifice</title>
+		<meta name="description" content="Real-time maps of Chicago neighborhoods">
+		
+		<!-- Mobile viewport optimized: h5bp.com/viewport -->
+   		<meta name="viewport" content="width=device-width">
+
+    		<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+		<link rel="stylesheet" href="css/main.css">
+
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv/dist/html5shiv.js"></script> <![endif] -->
+		<script src="js/modernizr-2.5.3.min.js"></script>
+
+	</head>
+
+	<body> 
+		<!-- Prompt IE 6-7 users to install Chrome Frame.-->
+		<!--[if lt IE 8]><p class="chromeframe">Your browser is so old that we frankly don't understand how you can tolerate surfing the web in this day and age. Fortunately, you can <a href="http://browsehappy.com/">browse happy</a> or install <a href="http://www.google.com/chromeframe/?redirect=true">Google Chrome Frame</a> to experience this site. </p><![endif] -->
+		<header>
+			<div class="search">
+			<form>
+				<input type="search" name="q" id="searchInput" placeholder="Search (e.g. ... )" size=15>
+				<button type="submit" id="searchButton">Search</button>
+		</form>
+	</div>
+	<div class="hood_jump">
+		<label for="hood_jump">Jump to neighborhood: </label>
+		<form id="hood_jump">
+			<button type="submit">Go</button>
+		</form>
+	</div>
+	<nav>
+		<ul>
+			<li class="first">&copy; Copyright 2012 Edifice</li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/blog">Blog</a></li>
+			<li class="last"><a href="/contact">Contact</a></li>
+		</ul>
+	</nav>
+			<div class="login">
+			<a href="/login">Log in</a> | <a href="/signup">Sign up</a> 
+		</div>
+			
+		</header>
+
+
+		<div id="map" class="map"></div>
+
+		
+		<script src="js/openlayers/OpenLayers.js"></script>
+		<script src="js/proj4js-combined.js"></script>
+		<script src="js/wicker_park.js"></script>
+
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    		<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+	</body>
+</html>
