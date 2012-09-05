@@ -1,10 +1,11 @@
 require 'sinatra'
+require 'sinatra-initializers'
 
 module Edifice
     class Application < Sinatra::Base
 
         get '/' do
-            puts 'Hello, World!'
+           'Hello, World!'
         end
         
     end
