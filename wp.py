@@ -16,7 +16,7 @@ conn = psycopg2.connect(dbname='chicago')
 cur = conn.cursor()
 buildings = AutoVivification()
 
-hood = 'Lincoln Park'
+hood = 'Wicker Park'
 
 
 cur.execute("SELECT b.bldg_gid, trim(b.est_value), trim(b.lotsize), trim(d.description) FROM county_temp b JOIN assessed.propclass d USING (property_class) JOIN buildings u USING (bldg_gid) JOIN neighborhoods y ON ST_Intersects(y.the_geom, u.the_geom) WHERE y.pri_neigh = %s", (hood,))
