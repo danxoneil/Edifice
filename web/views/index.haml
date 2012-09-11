@@ -5,6 +5,26 @@
     %link{ :href => "/bootstrap/css/bootstrap.css", :rel => "stylesheet" }
     %link{ :href => "/css/main.css", :rel => "stylesheet" }
   %body
+    .navbar.navbar-inverse
+      .navbar-inner
+        %a.brand{ :href => '#' }
+          Edifice
+        %ul.nav
+          %li.divider-vertical
+          %li
+            %a{ :href => '#' }
+              Home
+          %li.divider-vertical
+          %li
+            %a{ :href => '#' }
+              About
+          %li.divider-vertical
+          %li
+            %a{ :href => '#' }
+              Contact
+          %li.divider-vertical
+        %form.navbar-search.pull-right
+          %input.search-query{ :type => "text", :placeholder => "Search" }
     #map
     %script{ :src => "/js/OpenLayers.js" }
     %script{ :src => "/js/wicker_park.js" }
