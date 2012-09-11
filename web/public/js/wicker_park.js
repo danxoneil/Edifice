@@ -4,7 +4,7 @@ function init() {
 
 //	Map for entire city - when ready, use clone() function to create inset map
 	//var overview = new OpenLayers.Map('inset', {
-//		maxExtent: new OpenLayers.Bounds(1173524.7058, 1898031.7821, 1178333.0059, 1902906.1645) 
+//		maxExtent: new OpenLayers.Bounds(1173524.7058, 1898031.7821, 1178333.0059, 1902906.1645)
 //	});
 //		maxResolution: auto,
 //	    	maxExtent: new OpenLayers.Bounds(1091130.7724, 1813891.8902, 1205198.8501, 1951669.0201),
@@ -18,9 +18,9 @@ function init() {
 		numZoomLevels: 6,
 		maxExtent: new OpenLayers.Bounds(-530651.654365917, 1084738.22396089, -525073.023945515, 1087586.75830336)
 	});
-			
+
 	// Protocols - Retrieving GeoJSON files for vector layers
-	// -----------------------------------------------------			
+	// -----------------------------------------------------
 	var buildings_protocol = new OpenLayers.Protocol.HTTP({
 		url: 'wicker_park_buildings.json',
 		format: new OpenLayers.Format.GeoJSON({})
@@ -61,12 +61,12 @@ function init() {
 
 	roofs_layer = new OpenLayers.Layer.Vector('Roofs', {
 		protocol: roofs_protocol,
-		strategies: [new OpenLayers.Strategy.Fixed()],
+		strategies: [new OpenLayers.Strategy.Fixed()]
 	});
 
 	walls_layer = new OpenLayers.Layer.Vector('Walls', {
 		protocol: walls_protocol,
-		strategies: [new OpenLayers.Strategy.Fixed()],
+		strategies: [new OpenLayers.Strategy.Fixed()]
 	});
 
 	streets_layer = new OpenLayers.Layer.Vector('Streets', {
@@ -76,7 +76,7 @@ function init() {
 		isBaseLayer: false
 	 });
 
-	
+
 	curbs_layer = new OpenLayers.Layer.Vector('Curbs', {
 		protocol: curbs_protocol,
 		renderers: canvas,
@@ -89,9 +89,9 @@ function init() {
 	// --------------------------------------------------
 	var buildings_style = new OpenLayers.Style({
 		'fillColor': '#679e8b',
-	    	'fillOpacity': .33,
-	    	'strokeColor': '#000000',
-	    	'strokeWidth': 2,
+        'fillOpacity': .33,
+        'strokeColor': '#000000',
+        'strokeWidth': 2
 	});
 
 	var buildings_style_map = new OpenLayers.StyleMap({
@@ -102,9 +102,9 @@ function init() {
 
 	var roofs_style = new OpenLayers.Style({
 		'fillColor': '#679e8b',
-	    	'fillOpacity': .33,
-	    	'strokeColor': '#000000',
-	    	'strokeWidth': 2,
+        'fillOpacity': .33,
+        'strokeColor': '#000000',
+        'strokeWidth': 2
 	});
 
 	var roofs_style_map = new OpenLayers.StyleMap({
@@ -127,7 +127,7 @@ function init() {
 	walls_layer.styleMap = walls_style_map;
 	var streets_style = new OpenLayers.Style({
 		'strokeColor': '#616161',
-	    	'strokeWidth': 3,
+        'strokeWidth': 3
 	});
 
 	var streets_style_map = new OpenLayers.StyleMap({
@@ -135,11 +135,11 @@ function init() {
 	});
 
 	streets_layer.styleMap = streets_style_map;
-			
-	
+
+
 	var curbs_style = new OpenLayers.Style({
 		'strokeColor': '#616161',
-	    	'strokeWidth': 0.5
+        'strokeWidth': 0.5
 	});
 
 	var curbs_style_map = new OpenLayers.StyleMap({
@@ -153,14 +153,14 @@ function init() {
 	// Making Isometric
 	// --------------------------------------------------
 	//
-// TODO: All the things	
+// TODO: All the things
 // DONE: boom
 
 	// ---------------------------------------------------------
 	// Controls, Markers, and Mapmaking
 	// ---------------------------------------------------------
-	
-	
+
+
 
 	//map.addLayer(buildings_layer);
 
@@ -168,13 +168,13 @@ function init() {
 
 
 	// Overview Map
-	
+
 	// Top Panel - search, hood jump, log in
 	// pretty certain by now this will NOT be made in OpenLayers
-	
+
 	// Layer Switcher - in this case layers will be things like hotspots
 	// events, my friends, apts/homes, jobs, etc.
-	
+
 /*	var layerSwitcher = new OpenLayers.Control.LayerSwitcher({
 		roundedCorner: true,
 		roundedCornerColor: 'green'
@@ -189,7 +189,7 @@ function init() {
 	    			highlightOnly: true,
 	    			renderIntent: "temporary",
 				});
-	
+
 	var bldg_select = new OpenLayers.Control.SelectFeature(
 			 buildings_layer, {
 				toggle: true,
@@ -206,7 +206,7 @@ function init() {
 // On second thought, seems to take too long
 // Maybe just highlight only to give users visual clue of buildng they are about to select, then once they click it, display bulk data
 //
-// 	
+//
 	function displayPopup()  {
 		$.getJSON('wicker_park_pretty.json', function(data) {
 				var address = {
@@ -215,7 +215,7 @@ function init() {
 				};
 		});
 	}
-			
+
 
 	function bldg_selected(event) {
 		var feature = event.feature;
@@ -235,9 +235,9 @@ function init() {
 
 		feature.popup = popup;
 		map.addPopup(popup);}
-					
+
 					//pup.innerHTML += data.features[i].properties.address ; }
-				 
+
 			);
 
 
