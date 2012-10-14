@@ -64,7 +64,7 @@ Writing spatial queries is the heart of PostGIS. Have a look at the [PostGIS Ref
     15555
     (1 row)
 
-With a spatial database, we can find the number of those households within a half-mile of a [WIC Office](http://www.cityofchicago.org/city/en/depts/cdph/provdrs/clinic/svcs/apply_for_wic.html):
+With a spatial database, we can find the number of those households within a half-mile of a [WIC Office](http://www.cityofchicago.org/city/en/depts/cdph/provdrs/clinic/svcs/apply_for_wic_.html):
 
     SELECT sum(b.related_own_child_under_6) FROM demographics.census_blocks_families_single_mother b JOIN census_blocks c USING(gid) JOIN buildings u ON ST_DWithin(u.the_geom, c.the_geom, 2640) JOIN wic_offices w USING (bldg_gid);
     sum
